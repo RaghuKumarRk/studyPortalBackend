@@ -1,18 +1,18 @@
 /**
  * Importing Modules
  */
- const mongoose = require('mongoose');
+const constants = require('./app/common/constants');
+const mongoose = require('mongoose');
 const Express = require('express');
-const app = new Express()
+const app = new Express();
+
 
 
 /**
  * Creating Routes
  */
 app.get("/",(req,res)=>{
-    res.send('<body style="font-family: Helvetica !important; background-color: black">' +
-    '<div style="display: flex; flex:1; height: 100% ; justify-content: center; align-items: center; min-height: 100vh !important; font-size: 24px !important; color: #605DFF !important;">' +
-    '⚡  Studyportal  🔋 MicroService is working fine</div></body>')
+    res.send(constants.stringConstants.SERVICE_STATUS_HTML)
 });
 
 
