@@ -1,5 +1,6 @@
 const constants = require('../../common/constants');
 const userModel = require('../../models/user');
+const { response } = require('../../utils');
 const Utils = require('../../utils');
 
 module.exports = class Manager {
@@ -16,11 +17,15 @@ module.exports = class Manager {
         return usersList;
     }
 
-    // updateUser = async (requestData) =>{
-    //     return await userModel.findOneAndUpdate({_id:requestData.id}, requestData)
-    // }
+    updateUser = async (requestData) =>{
+        return await userModel.findOneAndUpdate({_id:requestData.id}, requestData).then(()=>{
+            return response;
+        })
+    }
 
-    // deleteUser = async(requestData)=>{
-    //     return await userModel.findOneAndDelete({_id:requestData.id})
-    // }
+    deleteUser = async(requestData)=>{
+        return await userModel.findOneAndDelete({_id:requestData.id}).then(()=>{
+            return response;
+        })
+    }
 }
