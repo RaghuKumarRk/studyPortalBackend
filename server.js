@@ -1,6 +1,7 @@
 /**
  * Importing Modules
  */
+const notesModule = require('./app/modules/notesModule');
 const userModule = require('./app/modules/userModule');
 const constants = require('./app/common/constants');
 const Config = require('./config/env');
@@ -18,10 +19,18 @@ app.use(Express.json());
  * Creating Routes
  */
 app.get("/",(req,res)=> res.send(constants.stringConstants.SERVICE_STATUS_HTML));
-app.get("/get-users", new userModule().getUsers);
-app.post("/create-user", new userModule().createUser);
+//-----------------------------USER ROUTES-------------------------------------//
 app.put("/update-user", new userModule().updateUser);
+app.post("/create-user", new userModule().createUser);
+app.get("/get-users-list", new userModule().getUsers);
 app.delete("/delete-user", new userModule().deleteUser);
+//-----------------------------NOTES ROUTES-------------------------------------//
+app.put("/update-notes", new notesModule().updateNotes);
+app.post("/create-notes", new notesModule().createNotes);
+app.get("/get-notes-list", new notesModule().getNotesList);
+app.delete("/delete-notes", new notesModule().deleteNotes);
+
+
 
 
 /**

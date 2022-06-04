@@ -8,7 +8,7 @@ module.exports = class controller {
         lhtLog('Inside createUser', req.body, 'createUser', 0, '');
         const [error, createUser] = await Utils.parseResponse(new userManager().createUser(req.body));
         if (!createUser) return Utils.handleError(error, req, res)
-        return Utils.response(res, createUser, constants.apiSuccessMessage.CREATE_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
+        return Utils.response(res, createUser, constants.apiSuccessMessage.USER_CREATE_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
     }
 
     async getUsers(req,res){
@@ -22,13 +22,13 @@ module.exports = class controller {
         lhtLog('Inside updateUser', req.body, 'updateUser', 0, '');
         const [error, updateUser] = await Utils.parseResponse(new userManager().updateUser(req.body));
         if (!updateUser) return Utils.handleError(error, req, res)
-        return Utils.response(res, updateUser, constants.apiSuccessMessage.UPDATE_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
+        return Utils.response(res, updateUser, constants.apiSuccessMessage.USER_UPDATE_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
     }
 
     async deleteUser(req,res){
         lhtLog('Inside deleteUser', req.body, 'deleteUser', 0, '');
         const [error, deleteUser] = await Utils.parseResponse(new userManager().deleteUser(req.body));
         if (!deleteUser) return Utils.handleError(error, req, res)
-        return Utils.response(res, deleteUser, constants.apiSuccessMessage.DELETE_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
+        return Utils.response(res, deleteUser, constants.apiSuccessMessage.USER_DELETE_SUCCES, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
     }
 }

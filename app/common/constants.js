@@ -44,9 +44,14 @@ const httpConstants = {
 }
 const apiSuccessMessage = {
   FETCH_SUCCESS: 'Information fetched successfully',
-  CREATE_SUCCESS: 'User created sucessfully',
-  UPDATE_SUCCESS : "User updated successfully",
-  DELETE_SUCCESS: "User deleted successfully",
+  
+  USER_CREATE_SUCCESS: 'User created sucessfully',
+  USER_UPDATE_SUCCESS: "User updated successfully",
+  USER_DELETE_SUCCES: "User deleted successfully",
+
+  NOTES_CREATE_SUCCESS: "Notes Created Successfully",
+  NOTES_UPDATE_SUCCESS: "Notes updated Successfully",
+  NOTES_DELETE_SUCCESS: "Notes deleted Successfully",
   CHANGE_PASSWORD_SUCCESS: "Password changed Successfully"
 }
 const apiFailureMessage = {
@@ -55,6 +60,10 @@ const apiFailureMessage = {
   GET_USER_FAIL: 'unable To Get users List',
   UPDATE_USER_FAIL: 'unable To update user',
   DELETE_USER_FAIL: 'unable To delete user',
+  CREATE_NOTES_FAIL: 'unable To Create notes',
+  GET_NOTES_FAIL: 'unable To Get notes List',
+  UPDATE_NOTES_FAIL: 'unable To update notes',
+  DELETE_NOTES_FAIL: 'unable To delete notes',
 }
 
 
