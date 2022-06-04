@@ -1,7 +1,7 @@
 const constants =  require('../../common/constants');
+const { lhtLog } = require('../../utils');
 const userManager = require("./manager");
 const Utils = require( '../../utils');
-const { lhtLog } = require('../../utils');
 
 module.exports = class controller {
     async createUser(req,res){
@@ -30,5 +30,12 @@ module.exports = class controller {
         const [error, deleteUser] = await Utils.parseResponse(new userManager().deleteUser(req.body));
         if (!deleteUser) return Utils.handleError(error, req, res)
         return Utils.response(res, deleteUser, constants.apiSuccessMessage.USER_DELETE_SUCCES, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
+    }
+
+    async getUserDetails(req,res){
+        lhtLog('Inside getUserDetails', req.body, 'getUserDetails', 0, '');
+        const [error, getUserDetails] = await Utils.parseResponse(new userManager().getUserDetails(req.body));
+        if (!getUserDetails) return Utils.handleError(error, req, res)
+        return Utils.response(res, getUserDetails, constants.apiSuccessMessage.FETCH_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
     }
 }

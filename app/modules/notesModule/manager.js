@@ -28,4 +28,10 @@ module.exports = class Manager {
             return response;
         })
     }
+
+    getNotesDetails = async(requestData)=>{
+        const notesDetails =  await notesModel.findById({_id:requestData.id});
+        if(!notesDetails) return Utils.returnRejection(constants.apiFailureMessage.FETCH_FAIL, constants.httpConstants.RESPONSE_CODES.BAD_REQUEST)
+        return notesDetails;
+    }
 }

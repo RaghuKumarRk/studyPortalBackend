@@ -28,4 +28,10 @@ module.exports = class Manager {
             return response;
         })
     }
+
+    getUserDetails = async(requestData)=>{
+        const userDetails = await userModel.findById({_id:requestData.id})
+        if(!userDetails) return Utils.returnRejection(constants.apiFailureMessage.FETCH_FAIL, constants.httpConstants.RESPONSE_CODES.BAD_REQUEST)
+        return userDetails;
+    }
 }

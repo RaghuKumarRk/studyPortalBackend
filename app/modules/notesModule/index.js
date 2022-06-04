@@ -1,7 +1,7 @@
 const constants =  require('../../common/constants');
+const { lhtLog } = require('../../utils');
 const notesManager = require("./manager");
 const Utils = require( '../../utils');
-const { lhtLog } = require('../../utils');
 
 module.exports = class controller {
     async createNotes(req,res){
@@ -30,5 +30,12 @@ module.exports = class controller {
         const [error, deleteNotes] = await Utils.parseResponse(new notesManager().deleteNotes(req.body));
         if (!deleteNotes) return Utils.handleError(error, req, res)
         return Utils.response(res, deleteNotes, constants.apiSuccessMessage.NOTES_DELETE_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
+    }
+
+    async getNotesDetails(req,res){
+        lhtLog('Inside getNotesDetails', req.body, 'getNotesDetails', 0, '');
+        const [error, getNotesDetails] = await Utils.parseResponse(new notesManager().getNotesDetails(req.body));
+        if (!getNotesDetails) return Utils.handleError(error, req, res)
+        return Utils.response(res, getNotesDetails, constants.apiSuccessMessage.FETCH_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
     }
 }

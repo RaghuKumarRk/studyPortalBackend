@@ -18,17 +18,20 @@ app.use(Express.json());
 /**
  * Creating Routes
  */
-app.get("/",(req,res)=> res.send(constants.stringConstants.SERVICE_STATUS_HTML));
-//-----------------------------USER ROUTES-------------------------------------//
-app.put("/update-user", new userModule().updateUser);
-app.post("/create-user", new userModule().createUser);
-app.get("/get-users-list", new userModule().getUsers);
-app.delete("/delete-user", new userModule().deleteUser);
-//-----------------------------NOTES ROUTES-------------------------------------//
-app.put("/update-notes", new notesModule().updateNotes);
-app.post("/create-notes", new notesModule().createNotes);
-app.get("/get-notes-list", new notesModule().getNotesList);
-app.delete("/delete-notes", new notesModule().deleteNotes);
+//----------------------------LANDING-PAGE------------------------------------//
+app.get("/",(res)=> res.send(constants.stringConstants.SERVICE_STATUS_HTML));
+//-----------------------------USER-ROUTES-------------------------------------//
+app.put("/user/update", new userModule().updateUser);
+app.post("/user/create", new userModule().createUser);
+app.get("/user/list", new userModule().getUsers);
+app.delete("/user/delete", new userModule().deleteUser);
+app.get('/user/details', new userModule().getUserDetails);
+//-----------------------------NOTES-ROUTES-------------------------------------//
+app.put("/notes/update", new notesModule().updateNotes);
+app.post("/notes/create", new notesModule().createNotes);
+app.get("/notes/list", new notesModule().getNotesList);
+app.delete("/notes/delete", new notesModule().deleteNotes);
+app.get("/notes/details", new notesModule().getNotesDetails);
 
 
 

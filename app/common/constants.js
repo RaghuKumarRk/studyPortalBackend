@@ -55,6 +55,7 @@ const apiSuccessMessage = {
   CHANGE_PASSWORD_SUCCESS: "Password changed Successfully"
 }
 const apiFailureMessage = {
+  FETCH_FAIL: 'Failed To fetch Information',
   INTERNAL_SERVER_ERROR: 'Internal Server Error',
   CREATE_USER_FAIL: 'unable To Create user',
   GET_USER_FAIL: 'unable To Get users List',
