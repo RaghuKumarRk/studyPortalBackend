@@ -16,11 +16,11 @@ module.exports = class Manager {
         return usersList;
     }
 
-    updateUser = async (requestData) =>{
-        return await userModel.findOneAndUpdate({_id:requestData.id}, requestData)
-    }
+    // updateUser = async (requestData) =>{
+    //     return await userModel.findOneAndUpdate({_id:requestData.id}, requestData)
+    // }
 
-    deleteUser = async(requestData)=>{
-        return await userModel.findOneAndDelete({_id:requestData.id})
-    }
+    // deleteUser = async(requestData)=>{
+    //     return await userModel.findOneAndDelete({_id:requestData.id})
+    // }
 }

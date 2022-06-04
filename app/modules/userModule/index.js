@@ -18,17 +18,17 @@ module.exports = class controller {
         return Utils.response(res, getUsers, constants.apiSuccessMessage.FETCH_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
     }
 
-    async updateUser(req,res){
-        lhtLog('Inside updateUser', req.body, 'updateUser', 0, '');
-        const [error, updateUser] = await Utils.parseResponse(new userManager().updateUser(req.body));
-        if (!updateUser) return Utils.handleError(error, req, res)
-        return Utils.response(res, updateUser, constants.apiSuccessMessage.UPDATE_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
-    }
+    // async updateUser(req,res){
+    //     lhtLog('Inside updateUser', req.body, 'updateUser', 0, '');
+    //     const [error, updateUser] = await Utils.parseResponse(new userManager().updateUser(req.body));
+    //     if (!updateUser) return Utils.handleError(error, req, res)
+    //     return Utils.response(res, updateUser, constants.apiSuccessMessage.UPDATE_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
+    // }
 
-    async deleteUser(req,res){
-        lhtLog('Inside deleteUser', req.body, 'deleteUser', 0, '');
-        const [error, deleteUser] = await Utils.parseResponse(new userManager().deleteUser(req.body));
-        if (!deleteUser) return Utils.handleError(error, req, res)
-        return Utils.response(res, deleteUser, constants.apiSuccessMessage.DELETE_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
-    }
+    // async deleteUser(req,res){
+    //     lhtLog('Inside deleteUser', req.body, 'deleteUser', 0, '');
+    //     const [error, deleteUser] = await Utils.parseResponse(new userManager().deleteUser(req.body));
+    //     if (!deleteUser) return Utils.handleError(error, req, res)
+    //     return Utils.response(res, deleteUser, constants.apiSuccessMessage.DELETE_SUCCESS, constants.httpConstants.RESPONSE_STATUS.SUCCESS, constants.httpConstants.RESPONSE_CODES.OK)
+    // }
 }
