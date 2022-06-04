@@ -46,11 +46,19 @@ const apiSuccessMessage = {
   FETCH_SUCCESS: 'Information fetched successfully',
   CREATE_SUCCESS: 'User created sucessfully',
   UPDATE_SUCCESS : "User updated successfully",
-  UNFOLLOW_SUCCESS: "Unfollow success",
+  DELETE_SUCCESS: "User deleted successfully",
   CHANGE_PASSWORD_SUCCESS: "Password changed Successfully"
+}
+const apiFailureMessage = {
+  INTERNAL_SERVER_ERROR: 'Internal Server Error',
+  CREATE_USER_FAIL: 'unable To Create user',
+  GET_USER_FAIL: 'unable To Get users List',
+  UPDATE_USER_FAIL: 'unable To update user',
+  DELETE_USER_FAIL: 'unable To delete user',
 }
 
 
+module.exports.apiFailureMessage = apiFailureMessage;
 module.exports.apiSuccessMessage = apiSuccessMessage;
 module.exports.stringConstants = stringConstants;
 module.exports.httpConstants = httpConstants;

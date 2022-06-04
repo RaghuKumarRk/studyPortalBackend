@@ -20,7 +20,8 @@ app.use(Express.json());
 app.get("/",(req,res)=> res.send(constants.stringConstants.SERVICE_STATUS_HTML));
 app.get("/get-users", new userModule().getUsers);
 app.post("/create-user", new userModule().createUser);
-// app.put("/update-user", new userModule().updateUser);
+app.put("/update-user", new userModule().updateUser);
+app.delete("/delete-user", new userModule().deleteUser);
 
 
 /**

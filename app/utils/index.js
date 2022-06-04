@@ -9,11 +9,6 @@ module.exports = class Utils {
       success: success,
       responseCode: code
     }
-    res.format({
-      json: () => {
-        res.send(responseObj)
-      }
-    })
   }
 
   static responseForValidation (res, errorArray, success, code = 400) {
